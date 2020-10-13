@@ -15,7 +15,7 @@ sleep 5
 clear
 echo "Auto-removing unnecessary stuff"
 dpkg --configure -a
-apt-fast install -f
+apt-get install -f
 apt-get autoremove
 apt-get clean all
 apt-get autoclean
@@ -24,19 +24,19 @@ clear
 echo "#####################################"
 echo "Updating process initialized..."
 echo "#####################################"
-apt-fast update
+apt-get update
 sleep 5
 clear
 echo "#####################################"
 echo "Upgrading process initialized..."
 echo "#####################################"
-apt-fast upgrade
+apt-get upgrade -y
 sleep 5
 clear
 echo "#####################################"
 echo "Updating Distro..."
 echo "#####################################"
-apt-fast dist-upgrade
+apt-get dist-upgrade
 apt-get install unattended-upgrades
 unattended-upgrade
 sleep 5
@@ -44,8 +44,8 @@ clear
 echo "#####################################"
 echo "Cleaning up the messes..."
 echo "#####################################"
-apt-fast --purge autoremove
-apt-fast autoclean
+apt-get --purge autoremove
+apt-get autoclean
 echo "#####################################"
 echo "Cleaning up..."
 echo "#####################################"
